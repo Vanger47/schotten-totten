@@ -4,7 +4,7 @@ public class Carte {
     private final int valeur;
     private final CouleurCarte couleur;
 
-    public Carte(CouleurCarte couleur, int valeur) {
+    public Carte(int valeur, CouleurCarte couleur) {
 
         if (valeur > 9 || valeur < 1) {
             throw new IllegalArgumentException("Le chiffre n'est pas valide");
@@ -35,7 +35,7 @@ public class Carte {
     public static void main(String[] args) {
 
         try {
-            Carte carte = new Carte(null, 4);
+            Carte carte = new Carte(4, CouleurCarte.BLEU);
             System.out.println("votre carte est : " + carte.toString());
         } catch (IllegalArgumentException e) {
             System.out.println("Refusé : " + e.getMessage());

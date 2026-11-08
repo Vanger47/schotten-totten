@@ -29,7 +29,7 @@ public class Carte {
 
     @Override
     public String toString() {
-        return this.valeur + " " + ":" + " " + this.couleur;
+        return this.valeur + " : " +  this.couleur;
     }
 
     public static void main(String[] args) {

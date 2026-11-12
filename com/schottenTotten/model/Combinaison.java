@@ -14,12 +14,12 @@ public class Combinaison implements Comparable<Combinaison> {
     }
 
     private int sommer(ArrayList<Carte> cartes) {
-        int somme = 0;
+        int total = 0;
         for (int i = 0; i < 3; i++) {
             Carte tmp = cartes.get(i);
-            somme += tmp.getValeur();
+            total += tmp.getValeur();
         }
-        return somme;
+        return total;
     }
 
     private TypeCombinaison trouverCombinaison(ArrayList<Carte> cartes) {

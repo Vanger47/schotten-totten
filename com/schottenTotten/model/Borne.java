@@ -3,6 +3,7 @@ package com.schottenTotten.model;
 import java.util.*;
 
 public class Borne {
+
     private Joueur proprietaire;
     private ArrayList<Carte> cartes1;
     private ArrayList<Carte> cartes2;
@@ -45,8 +46,8 @@ public class Borne {
             }
             cartes2.add(carte);
         }
-        if (cartes1.size() == carteMax || cartes2.size() == carteMax){
-            if (premier == null){
+        if (cartes1.size() == carteMax || cartes2.size() == carteMax) {
+            if (premier == null) {
                 this.premier = j;
             }
         }
@@ -76,12 +77,24 @@ public class Borne {
         throw new IllegalArgumentException("Le joueur est inconnu");
     }
 
-    public Joueur getPremier(){
+    public Joueur getPremier() {
         return this.premier;
     }
 
-    public boolean estComplet(){
-    return (cartes1.size() == carteMax && cartes2.size() == carteMax);
+    public Joueur getProprietaire() {
+        return this.proprietaire;
+    }
+
+    public Joueur getJoueur1() {
+        return this.joueur1;
+    }
+
+    public Joueur getJoueur2() {
+        return this.joueur2;
+    }
+
+    public boolean estComplet() {
+        return (cartes1.size() == carteMax && cartes2.size() == carteMax);
     }
 
 }

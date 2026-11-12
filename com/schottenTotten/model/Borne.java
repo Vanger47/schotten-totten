@@ -9,6 +9,7 @@ public class Borne {
     private Joueur joueur1;
     private Joueur joueur2;
     private int carteMax;
+    private Joueur premier;
 
     private static final int CARTES_PAR_DEFAUT = 3;
 
@@ -22,6 +23,7 @@ public class Borne {
         this.joueur1 = j1;
         this.joueur2 = j2;
         this.carteMax = CARTES_PAR_DEFAUT;
+        this.premier = null;
     }
 
     public void poser(Joueur j, Carte carte) {
@@ -42,6 +44,11 @@ public class Borne {
                 throw new IllegalStateException("Impossible : il y a déjà " + carteMax + " cartes");
             }
             cartes2.add(carte);
+        }
+        if (cartes1.size() == carteMax || cartes2.size() == carteMax){
+            if (premier == null){
+                this.premier = j;
+            }
         }
     }
 
@@ -68,4 +75,13 @@ public class Borne {
         }
         throw new IllegalArgumentException("Le joueur est inconnu");
     }
+
+    public Joueur getPremier(){
+        return this.premier;
+    }
+
+    public boolean estComplet(){
+    return (cartes1.size() == carteMax && cartes2.size() == carteMax);
+    }
+
 }

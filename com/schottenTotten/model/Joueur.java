@@ -2,7 +2,7 @@ package com.schottenTotten.model;
 
 import java.util.*;
 
-public class Joueur {
+public abstract class Joueur {
     private final String nom;
     private ArrayList<Carte> main;
 
@@ -38,18 +38,5 @@ public class Joueur {
 
     public int nbCartes() {
         return this.main.size();
-    }
-
-    public static void main(String[] args){
-        Joueur valentin = new Joueur("Valentin");
-        //Joueur nul = new Joueur(null);
-        //Joueur vide = new Joueur(" ");
-        Pioche pioche = new Pioche();
-        for (int i = 0; i < 6; i++){
-            valentin.recevoir(pioche.piocher());
-        }
-        valentin.jouer(2);
-        System.out.println("nb carte: " + valentin.nbCartes());
-        System.out.println("main : " + valentin.getMain());
     }
 }

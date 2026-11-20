@@ -97,4 +97,14 @@ public class Borne {
         return (cartes1.size() == carteMax && cartes2.size() == carteMax);
     }
 
+    public boolean estCompletPour(Joueur j) {
+    if (j == joueur1) {
+        return cartes1.size() >= carteMax;
+    }
+    if (j == joueur2) {
+        return cartes2.size() >= carteMax;
+    }
+    throw new IllegalArgumentException("Le joueur est inconnu");
+}
+
 }
